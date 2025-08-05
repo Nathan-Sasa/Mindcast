@@ -1,9 +1,18 @@
 @import "tailwindcss";
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
 
+@theme {
+  /* Define your custom theme colors here */
+  --color-background: #F3F4F6;
+  --color-text: #1F1F1F;
+  --color-accent: #EE8866;
+  --color-secondaire: #B8B0A1;
+  --color-hover: #FA7D44;
 
-.imgsvg{
-    fill: #ee8866;
-    stroke: #ee8866;
-    width: 2rem;
-    height: 2rem;
+  /* optionnel colors nuances accent */
+  --color-accentLight: #f3a892;
+  --color-accentDark: #c45e4f;
+  --color-textDark: #F3F4F6;
 }

@@ -1,4 +1,27 @@
-<main class="w-screen h-screen flex">
-    <h2>Mindcast</h2>
-    <img src="assets/icons/site/Mindcast-logo-visuel.svg" alt="logo du site" class="w-24 h-24 border">
+<main class="pt-20">
+    <nav class="w-screen min-h-20 flex items-center justify-between px-4 fixed top-0 z-50">
+        <div
+            class="flex items-center justify-between gap-x-18 backdrop-blur-sm bg-secondaire/40 h-16 px-4 rounded-lg">
+            <div
+                class="flex items-center gap-2">
+                <img
+                    src="{{logo}}"
+                    alt=""
+                    class="h-16 w-16">
+                <span>{{title}}</span>
+            </div>
+            <ul
+                class="flex items-center justify-around gap-x-10 *:cursor-pointer">
+                <li [routerLink]="['']">Accueil</li>
+                <li [routerLink]="['/blog']">Blog</li>
+                <li [routerLink]="['/auteur']">Auteur</li>
+            </ul>
+        </div>
+        <ul class="flex items-center justify-around p-4 gap-x-8 h-16 bg-secondaire/40 rounded-lg backdrop-blur-sm">
+            <li>Connexion</li>
+            <li>Inscription</li>
+        </ul>
+    </nav>
+
+    <router-outlet></router-outlet>
 </main>
