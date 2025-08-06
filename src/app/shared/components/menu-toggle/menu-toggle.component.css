@@ -1,0 +1,9 @@
+.menuToggle{
+    /* background-image: url('/assets/icons/site/mindcast-logo.svg'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+
+    
+}

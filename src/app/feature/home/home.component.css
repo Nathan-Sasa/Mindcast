@@ -1,0 +1,12 @@
+.scroll-button{
+    animation-delay: 1s;
+}
+
+.scroll-button{
+    visibility: hidden;
+    animation-delay: 2s;
+}
+.scroll-button.isVisible{
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out;
+}

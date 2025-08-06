@@ -1,27 +1,59 @@
-<main class="pt-20">
-    <nav class="w-screen min-h-20 flex items-center justify-between px-4 fixed top-0 z-50">
+<main class="pt-">
+    <nav class="w-screen min-h-20 flex items-center justify-between lg:px-4 fixed top-0 z-50">
         <div
-            class="flex items-center justify-between gap-x-18 backdrop-blur-sm bg-secondaire/40 h-16 px-4 rounded-lg">
+            class="flex items-center justify-between gap-x-18 backdrop-blur-xs lg:bg-secondaire/20 h-16 px-4 rounded-lg">
             <div
                 class="flex items-center gap-2">
                 <img
                     src="{{logo}}"
                     alt=""
-                    class="h-16 w-16">
-                <span>{{title}}</span>
+                    class="h-16 w-16"
+                    [routerLink]="['']"
+                >
+                <span
+                    class="text-2xl font-bold text-primary"
+                    [routerLink]="['']">
+                    {{title}}
+                </span>
             </div>
             <ul
-                class="flex items-center justify-around gap-x-10 *:cursor-pointer">
+                class="hidden lg:flex items-center justify-around gap-x-10 *:cursor-pointer ">
                 <li [routerLink]="['']">Accueil</li>
                 <li [routerLink]="['/blog']">Blog</li>
                 <li [routerLink]="['/auteur']">Auteur</li>
             </ul>
         </div>
-        <ul class="flex items-center justify-around p-4 gap-x-8 h-16 bg-secondaire/40 rounded-lg backdrop-blur-sm">
-            <li>Connexion</li>
-            <li>Inscription</li>
+        <ul class="hidden lg:flex items-center justify-around p-4 gap-x-8 h-16 bg-secondaire/30 rounded-lg backdrop-blur-xs *:cursor-pointer">
+            <li>
+                <i class="bi bi-sun text-xl text-text"></i>
+            </li>
+            <li
+                class="hover:text-hover transition-all duration-300">
+                Inscription
+            </li>
+            <li
+                class="px-2 py-2 rounded-lg bg-accent text-background hover:bg-hover ">
+                Connexion
+            </li>
         </ul>
+        <button
+            class="lg:hidden w-14 h-14 z-50 fixed right-4 rounded-xl backdrop-blur-xs flex items-center justify-center || text-text text-4xl font-semibold"
+            (click)="toggleMenu()">
+            <i 
+                class="bi bi-list"
+                *ngIf="!isMenuOpen">
+            </i>
+            <i
+                class="bi bi-x"
+                *ngIf="isMenuOpen">
+            </i>
+        </button>
     </nav>
+
+    <app-menu-toggle
+        [isOpen]="isMenuOpen"
+        (closed)="closeMenu()">
+    </app-menu-toggle>
 
     <router-outlet></router-outlet>
 </main>

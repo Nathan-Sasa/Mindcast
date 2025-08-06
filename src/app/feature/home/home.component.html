@@ -1,5 +1,120 @@
 <section
-    class="px-4 w-screen min-h-screen flex items-center justify-center ">
-    home
+    class="px-4 w-screen min-h-screen flex flex-col items-center justify-center ">
+    <div
+        *ngFor="let home of mindcastDependacies"
+        class="flex flex-col items-center justify-center text-center">
+        <img
+            src="{{home.logo}}"
+            alt=""
+            class="h-70 w-70 lg:h-96 lg:w-96"
+            @faceIn
+        >
+        <h1
+            class="text-5xl font-bold text-center mb-4"
+            @faceInDelay>
+            {{home.title}}
+        </h1>
+        <p
+            class="text-xl text-center max-w-2xl font-extralight"
+            @faceInDelayXl>
+            {{home.description}}
+        </p>
+    </div>
+    <div
+        class="scroll-button flex flex-col items-center justify-center mt-8 *:cursor-pointer"
+        @faceInDelayXxl
+        appScrollDownVisible>
+        <img
+            src="assets/icons/element/arrow-icon.svg"
+            alt=""
+            class="h-8 w-8 animate-bounce"
+            (click)="scrollDown()"
+        >
+        <span
+            class="text-xl font-semibold mt- animate-pulse"
+            (click)="scrollDown()"
+            >
+            scroll down
+        </span>
+    </div>
+</section>
 
+<!-- ================= section 2 ================== -->
+
+<section
+    #scrollDownVisible
+    class="w-screen min-h-screen relative flex flex-col items-center justify-start pt-24 px-4 gap-y-8"
+    >
+    <article
+        class="flex gap-x-2">
+        <img 
+            src="assets/images/articles/article1.jpg" 
+            alt=""
+            class="h-90 min-w-1/2 object-cover border-2 border-secondaire rounded-2xl"
+        >
+        <div
+            id="divElements"
+            class="flex flex-col items-start justify-between gap-y-4 w-1/2 relative pt-2">
+            <p
+                class="text-justify">
+                <i class="bi bi-quote"></i>Est une application web de gestion de la santé mentale, qui permet aux utilisateurs de suivre leur humeur, de gérer leur stress et d'améliorer leur bien-être mental. L'application propose des fonctionnalités telles que la journalisation de l'humeur, des exercices de respiration, des conseils sur la santé mentale et des ressources pour trouver de l'aide professionnelle. est une application web de gestion de la santé mentale, qui permet aux utilisateurs de suivre leur humeur, de gérer leur stress et d'améliorer leur bien-être mental. L'application propose des fonctionnalités telles que la journalisation de l'humeur, des exercices de respiration, des conseils sur la santé mentale et des ressources pour trouver de l'aide professionnelle.<i class="bi bi-quote"></i> 
+            </p>
+            <div
+                class="w-full h-1/5 flex flex-col items-start justify-between gap-y-2 relative">
+                <h2
+                    class="font-semibold text-2xl text-text w-full">
+                    Titre du blog
+                </h2>
+                <div
+                    class="w-full h-1/3 flex justify-between items-center">
+                    <span
+                        class="text-accentLight text-sm">
+                        Publié le 27 mars 2025
+                    </span>
+                    <div
+                        class="flex items-end gap-x-4 *:flex *:items-end *:gap-x-1 *:text-sm *:text-accentLight">
+                        <span>
+                            <i class="bi bi-star-fill"></i>
+                            <span>342</span>
+                        </span>
+                        <span>
+                            <i class="bi bi-chat-right-quote-fill"></i>
+                            <span>123</span>
+                        </span>
+                        <span>
+                            <i class="bi bi-share-fill"></i>
+                            <span>99</span>
+                        </span>
+                        <span>
+                            <i class="bi bi-tag-fill"></i>
+                            <span>Tech</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div
+        class=" w-full flex">
+        <div
+            *ngFor=" let article of articles"
+            class="flex items-center justify-start gap-x-2 p- w-full hover:bg-hover transition-all duration-300 rounded-xl not-last:mr-2 relative cursor-pointer">
+            <img 
+                src="{{article.image}}" 
+                alt=""
+                class="w-34 h-full rounded-xl"
+            >
+            <div>
+                <p
+                    class="text-sm">
+                    {{article.description}}
+                </p>
+                <h2
+                    class="text-md font-semibold text-text mt-2">
+                    {{article.title}}
+                </h2>
+            </div>
+        </div>
+
+    </div>
 </section>
