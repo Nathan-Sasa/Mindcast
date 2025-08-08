@@ -28,3 +28,7 @@ initialisation du projet
 
 -directive fonction scrollDown pour defilement automatique vers le bas
 -Composant 'menu-toggle'
+
+## [v0.1.1] - 2025-08-06
+
+fixation du bug de la fichage du prototype des articles recemment publies mise en avant dans la section home
