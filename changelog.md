@@ -68,6 +68,10 @@ ajout du fichier enviroment.ts
 
 configuration des fonctions des connexion ou authentification avec google
 
+#### doc
+
+auth.service.ts
+
 - import [Auth](@angular/fire/auth)
 - import [authState](@angular/fire/auth)
 - import [GoogleAuthProvider, signInWithPopup, signOut as firebaseSignOut](@angular/fire/auth)
@@ -77,3 +81,43 @@ configuration des fonctions des connexion ou authentification avec google
     - signOut
     - isAdmin
     - getUid
+
+### article service
+
+-configuration de fonction de l'a'ajout, suppression, commentaires, reponses, likes et partage des articles.
+
+#### add doc
+
+article.service.ts
+
+### fonctions
+
+listes des articles
+
+- getArticles
+- getArticleBysSlug (fonction contenant un bug)
+
+creation, mise a jour et suppression d'article
+
+- async createArticle
+- async updateArticle
+- async deleteArticle
+
+importer des images d'article
+
+- uploadArticleImage
+
+ajour et suppression des commentaires d'article
+
+- addComment
+- deleteCmment
+
+mettre, retirer et compteur des likes d'article
+
+- likeArticle
+- async unlikeArticle
+- getLIkeCount
+
+comteur de partges
+
+- async incrementShare
