@@ -38,7 +38,7 @@ export const fadeInDelayXxl = trigger (
     'faceInDelayXxl', [
         transition(':enter', [
             style({opacity: 0}),
-            animate('500ms 1.7s ease-in-out', style({opacity: 1, top: 0}))
+            animate('500ms 5s ease-in-out', style({opacity: 1}))
         ]),
         transition(':leave', [
             animate('500ms ease-in-out', style({opacity: 0}))

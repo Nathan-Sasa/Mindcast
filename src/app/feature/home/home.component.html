@@ -2,26 +2,37 @@
     class="px-4 w-screen min-h-screen flex flex-col items-center justify-center relative">
     <div
         *ngFor="let home of mindcastDependacies"
-        class="flex flex-col items-center justify-center text-center">
-        <img
+        class="flex flex-col gap-y-4 items-center justify-center text-center">
+        <!-- <img
             src="{{home.logo}}"
             alt=""
-            class="h-70 w-70 lg:h-96 lg:w-96"
+            class="h-40 w-40 lg:h-36 lg:w-36"
             @faceIn
-        >
+        > -->
         <h1
-            class="text-5xl font-bold text-center mb-4"
+            class="text-5xl lg:text-8xl font-bold text-center mb-4"
             @faceInDelay>
             {{home.title}}
+            
         </h1>
         <p
-            class="text-xl text-center max-w-2xl font-extralight"
+            class="text-lg text-center max-w-2xl font-extralight"
             @faceInDelayXl>
             {{home.description}}
         </p>
+        <div 
+            class="h-10 w-10 hover:w-30 flex items-center justify-between relative border-2 border-text hover:border-accen rounded-4xl mt-8 cursor-pointer transition-all duration-300 group" @faceInDelayXl>
+            <span
+                class="ml-2 text-lg capitalize opacity-0 group-hover:opacity-100 absolute group-hover:relative transition-all duration-500">intro
+            </span>
+            <span
+                class="h-9 group-hover:h-[34px] w-9 group-hover:w-16 flex items-center justify-center absolute right-0 group-hover:right-[1px] rounded-full text-white bg-text transition-all duration-300  || group-hover:bg-accen">
+                <i class="bi bi-arrow-up-right"></i>
+            </span>
+        </div>
     </div>
     <div
-        class="scroll-button flex flex-col items-center justify-center mt-8 *:cursor-pointer"
+        class="scroll-button flex flex-col items-center justify-center mt-8 *:cursor-pointer absolute bottom-0"
         @faceInDelayXxl
         appScrollDownVisible>
         <img
