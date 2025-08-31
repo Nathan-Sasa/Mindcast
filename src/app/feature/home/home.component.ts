@@ -20,7 +20,7 @@ export class HomeComponent {
         {
             title: 'Mindcast',
             logo: 'assets/icons/site/mindcast-logo.svg',
-            description: 'Mindcast c\'est un carnet numérique où les réflexions techniques, les solutions aux difficultés rencontrés par d\'autres et les idées de demain sont partagées. ',
+            description: 'Mindcast c\'est un carnet numérique où les réflexions techniques, les solutions aux difficultés rencontrés par d\'autres et les idées de demain sont partagées.',
 
         }
     ]
