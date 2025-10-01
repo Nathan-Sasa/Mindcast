@@ -1,0 +1,133 @@
+<section
+    class="flex flex-col items-center justify-center mt-16 sm:mt-24 lg:mt-32">
+    <h3
+        class="text-2xl font-stretch-extra-expanded ">
+        <span></span>
+        <span>Communauté</span>
+    </h3>
+    <div
+        class="w-screen min-h-screen  gap-y-20 pt-10 flex flex-col items-center justify-start relative">
+        <div 
+            class="flex flex-col items-center *:font-extralight *:text-xl *:text-center gap-4 px-4">
+            <p>
+                Mindcast a pour but de rapprocher les développeurs africains le plus proche que possible.
+            </p>
+            <p>
+                Ainsi aider les débutant du web développement, à l'ascension.
+            </p>
+        </div>
+        <div
+            class="w-full flex flex-col items-center justify-center relative">
+            <p
+                class="font-light font text-center px-4">
+                Découvrez et rejoignez la communauté de développeurs : Juniors, Expérimentés et Seniors
+            </p>
+            <div
+                class="flex flex-wrap w-full items-center justify-center gap-5 mt-8">
+                <div 
+                    *ngFor="let c of community"
+                    class="flex flex-col items-center">
+                    <img 
+                        src="{{c.image}}" 
+                        alt=""
+                        class="w-44 h-32 border rounded-lg"
+                    >
+                    <span
+                        class="font-semibold text-xl">
+                        {{c.name}}
+                    </span>
+                    <span
+                        class="text-sm font-light text-accent">
+                        {{c.description}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="relative w-full min-h-screen flex flex-col items-center justify-center pt-40 mt-20">
+            <p
+                class="px-4 max-md:px-10 text-2xl font-bold mt-5 text-left ||  lg:pl-24 absolute top-0">
+                Partagez votre expérience, vos difficultés et solutions avec les autres en publiant dans le carnet  
+                <span
+                    class="font-mono italic">Mindcat.
+                </span>
+            </p>
+
+
+            <!--  parcours de progression  -->
+            <div class="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-background via-background/50 to-background">
+               <i class="bi bi-flag-fill text-3xl text-secondaire/40 absolute top-25 left-10 || max-md:hidden"></i>
+
+               <!-- la progression -->
+                <!-- start level 1 -->
+                <i class="ri-footprint-fill top-32 left-15 rotate-z-[110deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-37 left-22 rotate-z-[110deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-42 left-29 rotate-z-[105deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-46 left-36 rotate-z-[100deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-48 left-44 rotate-z-[105deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <!-- level 1 -->
+                <i class="bi bi-lightbulb-fill level text-5xl absolute top-46 left-48 text-amber-400/30 animate-bounce duration-1000 || max-md:hidden" appScrollDownVisible></i>
+
+                <!-- level 2 -->
+                <i class="ri-footprint-fill top-52 left-60 rotate-z-[100deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-54 left-68 rotate-z-[105deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-57 left-76 rotate-z-[107deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-60 left-85 rotate-z-[105deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-64 left-94 rotate-z-[105deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <i class="ri-footprint-fill top-67 left-102 rotate-z-[105deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+                <!-- level 2 -->
+                <i class="bi bi-journal-code level text-5xl absolute top-67 left-109 text-purple-400/30 animate-bounce duration-1000 || max-md:hidden" appScrollDownVisible></i>
+                
+                <!-- level 3 -->
+                <i class="ri-footprint-fill top-67 left-122 rotate-z-[105deg] transition duration-500 || max-md:hidden" appScrollDownVisible></i>
+
+
+                    <button
+                        class="px-6 py-2 rounded-lg bg-background shadow text-accent transition-all duration-300 cursor-pointer || sticky top-30 left-10 ml-5 mt-50 mb-50 z-10 max-md:hidden"
+                        (click)="isFocus = !isFocus">
+                        <i class="{{isFocus ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill'}}"></i>
+                    </button>
+            </div>
+
+
+            <div
+                *ngIf="isFocus"
+                class="flex flex-wrap w-full items-center justify-center relative gap-5 px-20 py-20 rounded-xl || bg-whit mb-8">
+                <div 
+                    *ngFor="let p of publication"
+                    class=" w-72 h-94 flex flex-col justify-between relative rounded-3xl bg-background border border-secondaire/50 || shadow-2xl hover:shadow-2xl/50 transition-all duration-300 drop-shadow-2xl ">
+                    <!-- <img
+                        src="{{p.image}}" 
+                        alt=""
+                        class="w-full h-48 border-1 border-text/10 rounded-lg"
+                    > -->
+                    <div
+                        class="flex flex-col justify-start px-2">
+                        <div>
+                            <span
+                                class="text-sm text-accent/70">
+                                {{p.date}}
+                            </span>
+                            <span
+                                class="line-clamp-1 font-semibold mb-2">
+                                {{p.title}}
+                            </span>
+                        </div>
+                        <span
+                            class="font-light line-clamp-2">
+                            {{p.description}}
+                        </span>
+                    </div>
+                    <!-- <span
+                        class="ml-2 mb-2 px-2 w-19 rounded-md flex items-center border border-accent text-sm">
+                        Lire plus
+                    </span> -->
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <div class="w-screen h-screen">
+
+    </div>
+</section>

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.ri-footprint-fill {
+  position: absolute;
+  opacity: 0;
+}
+.ri-footprint-fill.isVisible {
+  /* color: #34d399; Couleur verte pour indiquer la visibilité */
+  color: var(--color-secondaire);
+  opacity: .6;
+}
+
+.level{
+  position: absolute;
+  opacity: 0;
+}
+.level.isVisible {
+  /* color: var(--color-secondaire); */
+  opacity: 1;
+}

@@ -1,31 +1,16 @@
 <section
-    class="w-screen min-h-screen relative flex flex-col-reverse items-center justify-start pt-8 lg:pt-24 px-4 gap-y-8 pb-2"
+    class="w-screen min-h-screen flex flex-col items-center justify-start pt-6 lg:pt-20 px-4 gap-y-4 pb-2"
     >
-    <div
-        class=" w-full flex flex-col lg:flex-row">
-        <div
-            *ngFor=" let article of articles"
-            class="flex items-center justify-start gap-x-2 p- w-full bg-secondaire/30 lg:hover:bg-hover transition-all duration-300 rounded-xl not-last:mr-2 not-last:mb-4 lg:not-last:mb-0 relative cursor-pointer"
-            (click)="selectArticle = article ; isSelect = !isSelect">
-            <img 
-                src="{{article.image}}" 
-                alt=""
-                class=" w-34 h-30 rounded-xl border-2 border-secondaire"
-            >
-            <div>
-                <p
-                    class="text-sm line-clamp-3 text-balance">
-                    {{article.description}}
-                </p>
-                <h2
-                    class="text-md font-semibold text-text mt-2 line-clamp-2">
-                    {{article.title}}
-                </h2>
-            </div>
-        </div>
+    <div 
+        class="w-screen justify-center items-center h-8 flex">
+        <h2
+            class="text-xl font-stretch-extra-expanded">
+            <span></span>
+            <span>Article</span>
+        </h2>
     </div>
     <article
-        class="flex flex-col w-full lg:flex-row gap-x-2 ">
+        class="flex flex-col w-full lg:flex-row gap-x-2">
         <img 
             src="{{defaultArticle.image}} " 
             alt=""
@@ -87,6 +72,29 @@
             </div>
         </div>
     </article>
+    <div
+        class=" w-full flex flex-col lg:flex-row lg:mt-8">
+        <div
+            *ngFor=" let article of articles"
+            class="flex items-center justify-start gap-x-2 p- w-full bg-secondaire/30 lg:hover:bg-hover transition-all duration-300 rounded-xl not-last:mr-2 not-last:mb-4 lg:not-last:mb-0 relative cursor-pointer pr-1"
+            (click)="selectArticle = article ; isSelect = !isSelect">
+            <img 
+                src="{{article.image}}" 
+                alt=""
+                class=" w-34 h-30 rounded-xl border-2 border-secondaire"
+            >
+            <div>
+                <p
+                    class="text-sm line-clamp-3 text-balance">
+                    {{article.description}}
+                </p>
+                <h2
+                    class="text-md font-semibold text-text mt-2 line-clamp-2">
+                    {{article.title}}
+                </h2>
+            </div>
+        </div>
+    </div>
     <!-- <article
         class="flex flex-col w-full lg:flex-row gap-x-2 ">
         <img 

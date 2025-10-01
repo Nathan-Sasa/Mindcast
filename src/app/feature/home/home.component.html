@@ -21,12 +21,13 @@
             {{home.description}}
         </p>
         <div 
-            class="h-10 w-10 hover:w-30 flex items-center justify-between relative border-2 border-text hover:border-accen rounded-4xl mt-8 cursor-pointer transition-all duration-300 group" @faceInDelayXl>
+            class="h-10 w-30 lg:w-10 hover:w-30 flex items-center justify-between relative border-2 border-text hover:border-accen rounded-4xl mt-8 cursor-pointer transition-all duration-300 group" @faceInDelayXl
+            routerLink="/intro">
             <span
-                class="ml-2 text-lg capitalize opacity-0 group-hover:opacity-100 absolute group-hover:relative transition-all duration-500">intro
+                class="ml-2 text-lg text-text capitalize lg:opacity-0 lg:group-hover:opacity-100 absolute group-hover:relative transition-all duration-500">intro
             </span>
             <span
-                class="h-9 group-hover:h-[34px] w-9 group-hover:w-16 flex items-center justify-center absolute right-0 group-hover:right-[1px] rounded-full text-white bg-text transition-all duration-300">
+                class="h-[34px] lg:h-9 lg:group-hover:h-[34px] w-16 lg:w-9 lg:group-hover:w-16 flex items-center justify-center absolute right-[1px] lg:right-0 lg:group-hover:right-[1px] rounded-full text-white bg-text transition-all duration-300">
                 <i class="bi bi-arrow-up-right"></i>
             </span>
         </div>
@@ -45,7 +46,7 @@
             class="text-xl font-semibold mt- animate-pulse"
             (click)="scrollDown()"
             >
-            scroll down
+            voir article
         </span>
     </div>
 </section>
@@ -63,11 +64,14 @@
 
 </section> -->
 
-<!-- ================= section 2 recent articles prototype ================== -->
+<!-- ================= section 2 current app ================== -->
+<app-current-app></app-current-app>
+<!-- ================= section 3 recent articles prototype ================== -->
 <div
 #scrollDownVisible>
 
     <app-recent-article ></app-recent-article>
 </div>
 
-<!-- ================ section 3 =================== -->
+<!-- ================ section 4 home community =================== -->
+ <app-home-community></app-home-community>
