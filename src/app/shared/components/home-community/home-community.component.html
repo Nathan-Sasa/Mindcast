@@ -54,7 +54,7 @@
 
 
             <!--  parcours de progression  -->
-            <div class="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-background via-background/50 to-background">
+            <div class="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-background dark:from-text via-background/50 dark:via-text to-background dark:to-text">
                <i class="bi bi-flag-fill text-3xl text-secondaire/40 absolute top-25 left-10 || max-md:hidden"></i>
 
                <!-- la progression -->
@@ -82,7 +82,7 @@
 
 
                     <button
-                        class="px-6 py-2 rounded-lg bg-background shadow text-accent transition-all duration-300 cursor-pointer || sticky top-30 left-10 ml-5 mt-50 mb-50 z-10 max-md:hidden"
+                        class="px-6 py-2 rounded-lg bg-background dark:bg-text dark:border dark:border-background/30 shadow-sm/20 dark:shadow-background drop-shadow-md/10 text-accent dark:text-background/30 transition-all duration-300 cursor-pointer || sticky top-30 left-10 ml-5 mt-50 mb-50 z-10 max-md:hidden"
                         (click)="isFocus = !isFocus">
                         <i class="{{isFocus ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill'}}"></i>
                     </button>
@@ -91,10 +91,10 @@
 
             <div
                 *ngIf="isFocus"
-                class="flex flex-wrap w-full items-center justify-center relative gap-5 px-20 py-20 rounded-xl || bg-whit mb-8">
+                class="flex flex-wrap w-full items-center justify-center relative gap-5 lg:px-10 py-20 rounded-xl || bg-whit mb-8">
                 <div 
                     *ngFor="let p of publication"
-                    class=" w-72 h-94 flex flex-col justify-between relative rounded-3xl bg-background border border-secondaire/50 || shadow-2xl hover:shadow-2xl/50 transition-all duration-300 drop-shadow-2xl ">
+                    class=" w-72 max-sm:w-86 h-94 flex flex-col justify-between relative rounded-3xl bg-background dark:bg-text border border-secondaire/50 || shadow-md/30 hover:shadow-lg/50 dark:shadow-background transition-all duration-300">
                     <!-- <img
                         src="{{p.image}}" 
                         alt=""

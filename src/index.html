@@ -14,10 +14,38 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
         />
+
+        <script>
+            const theme = localStorage.getItem('theme-preference');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+            // Si le thème est explicitement 'dark' ou si c'est 'system' et l'OS est sombre
+            if (theme === 'dark' || (theme === 'system' && prefersDark) || (!theme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            } else  {
+                document.documentElement.classList.remove('dark');
+            }
+            // Si pas de thème stocké et l'OS est clair, ou si explicitement 'light', on ne fait rien (par défaut c'est clair).
+        </script>
+
+        <!-- <script>
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            document.documentElement.classList.toggle(  
+                "dark",  
+                localStorage.theme === "dark" ||    
+                    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),);
+            
+            // Whenever the user explicitly chooses light mode
+            localStorage.theme = "light";
+            // Whenever the user explicitly chooses dark mode
+            localStorage.theme = "dark";
+            // Whenever the user explicitly chooses to respect the OS preference
+            localStorage.removeItem("theme");
+        </script> -->
     </head>
 
     <body
-        class="bg-background text-text *:selection:bg-accentLight *:selection:text-text">
+        class="bg-background dark:bg-text text-text *:selection:bg-accentLight *:selection:text-text">
         
         <app-root></app-root>
     </body>

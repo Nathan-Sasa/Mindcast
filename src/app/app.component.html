@@ -1,4 +1,6 @@
-<main class="">
+<main 
+    (click)="choiceTheme ? false : false"
+    class="dark:bg-text bg-background text-text dark:text-background">
     <nav class="w-screen min-h-20 flex items-center justify-between lg:px-4 fixed top-0 z-50">
         <div
             class="flex items-center justify-between gap-x-18 backdrop-blur-xs lg:bg-secondaire/20 h-16 px-4 rounded-lg">
@@ -24,10 +26,42 @@
             </ul>
         </div>
         <ul class="hidden lg:flex items-center justify-around p-4 gap-x-8 h-16 bg-secondaire/30 rounded-lg backdrop-blur-xs *:cursor-pointer">
-            <li>
+            <li class="relative">
                 <i 
+                    (click)="choiceTheme = !choiceTheme"
                     id="modeToggle"
-                    class="bi bi-sun text-xl text-text"></i>
+                    class="bi bi-circle-half text-xl text-text dark:text-background hover:text-hover transition-all duration-300 cursor-pointer">
+                </i>
+                <div 
+                    *ngIf="choiceTheme"
+                    class="absolute z-999 w-48 h-30 flex flex-col justify-center bg-background dark:bg-secondaire/30 dark:text-text shadow shadow-md/30 dark:shadow-background  backdrop-blur-xs translate-y-1/2 -top-3 -left-2.5 || rounded-b-lg cursor-default transition-all duration-300">
+                    <button
+                        (click)="themeService.setLightTheme() ; choiceTheme = false"
+                        [class.bg-accent]="themeService.themeDisplay() === appTheme.Light"
+                        [class.text-background]="themeService.themeDisplay() === appTheme.Light"
+                        
+                        class="flex pl-5 gap-x-2 items-center">
+                        <i class="bi bi-sun text-xl"></i>
+                        Claire
+                    </button>
+                    <button
+                        (click)="themeService.setDarkTheme() ; choiceTheme = false"
+                        [class.bg-accent]="themeService.themeDisplay() === appTheme.Dark"
+                        [class.text-background]="themeService.themeDisplay() === appTheme.Dark"
+                        class="flex pl-5 gap-x-2 items-center">
+                        <i class="bi bi-moon"></i>
+                        Sombre
+                    </button>
+                    <button
+                        (click)="themeService.setSystemTheme() ; choiceTheme = false"
+                        [class.bg-accent]="themeService.themeDisplay() === appTheme.System"
+                        [class.text-background]="themeService.themeDisplay() === appTheme.System"
+                        class="flex pl-5 gap-x-2 items-center">
+                        <i class="bi bi-pc-display"></i>
+                        System
+                    </button>
+                    <!-- <p>Thème actuel effectif : {{ themeService.actualTheme() }}</p> -->
+                </div>
             </li>
             <li
                 class="hover:text-hover transition-all duration-300">
@@ -39,7 +73,7 @@
             </li>
         </ul>
         <button
-            class="lg:hidden w-14 h-14 z-50 fixed right-4 rounded-xl backdrop-blur-xs flex items-center justify-center || text-text text-4xl font-semibold"
+            class="lg:hidden w-14 h-14 z-50 fixed right-4 rounded-xl backdrop-blur-xs flex items-center justify-center || text-text text-4xl font-semibold dark:text-background"
             (click)="toggleMenu()">
             <i 
                 class="bi bi-list"

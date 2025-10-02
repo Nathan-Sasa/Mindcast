@@ -76,7 +76,7 @@
         class=" w-full flex flex-col lg:flex-row lg:mt-8">
         <div
             *ngFor=" let article of articles"
-            class="flex items-center justify-start gap-x-2 p- w-full bg-secondaire/30 lg:hover:bg-hover transition-all duration-300 rounded-xl not-last:mr-2 not-last:mb-4 lg:not-last:mb-0 relative cursor-pointer pr-1"
+            class="flex items-center justify-start gap-x-2 p- w-full bg-background dark:bg-text lg:hover:bg-hover transition-all duration-300 rounded-xl not-last:mr-2 not-last:mb-4 lg:not-last:mb-0 relative cursor-pointer pr-1 || shadow-md/10 drop-shadow-md/30 dark:shadow-background "
             (click)="selectArticle = article ; isSelect = !isSelect">
             <img 
                 src="{{article.image}}" 

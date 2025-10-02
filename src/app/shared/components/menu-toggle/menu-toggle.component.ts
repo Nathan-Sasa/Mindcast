@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, Input, Output, Renderer2, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AppTheme, ThemeService } from '../../../core/services/theme.service';
+// import { AppTheme, ThemeService } from './core/services/theme.service';
+
+
 
 @Component({
   selector: 'app-menu-toggle',
@@ -10,11 +14,16 @@ import { RouterModule } from '@angular/router';
 })
 export class MenuToggleComponent {
 
-    @Input() isOpen = false;
-    @Output() closed = new EventEmitter<void>();
+  choiceTheme = false;
+
+  themeService = inject(ThemeService);
+  appTheme = AppTheme
+
+  @Input() isOpen = false;
+  @Output() closed = new EventEmitter<void>();
 
 
-    onClose() {
-        this.closed.emit();
-    }
+  onClose() {
+    this.closed.emit();
+  }
 }

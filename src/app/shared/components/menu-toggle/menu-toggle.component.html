@@ -1,10 +1,10 @@
 <div
-    class=" menuToggle fixed flex flex-col items-start justify-around pl-8 min-lg:hidden inset-0 z-40 h-screen w-screen bg-background/90 backdrop-blur-sm transition-all durarion-300"
+    class=" menuToggle fixed flex flex-col items-start justify-around pl-8 min-lg:hidden inset-0 z-40 h-screen w-screen bg-background/90 dark:bg-text backdrop-blur-sm transition-all durarion-300"
     *ngIf="isOpen"
     [ngClass]="{'translate-x-0': isOpen, '-translate-x-full': !isOpen, 'transition-all': isOpen, 'duration-300': isOpen}">
 
     <ul
-        class="flex flex-col items-start justify-around gap-y-4 *:cursor-pointer *:text-3xl *:flex *:items-end *:gap-x-4">
+        class="flex flex-col items-start justify-around gap-y-4 *:cursor-pointer *:text-2xl *:flex *:items-end *:gap-x-4">
         <li 
             [routerLink]="['']"
             (click)="onClose()">
@@ -30,7 +30,7 @@
             </span>
         </li>
     </ul>
-    <ul class="flex flex-col items-start justify-around *:text-2xl">
+    <ul class="flex flex-col items-start justify-around *:text-xl">
         <li
             class="bg-accent px-2 rounded-lg hover:bg-hover text-background">
             Connexion
@@ -38,6 +38,43 @@
         <li
             class="text-accent pl-2">
             s'inscrire
+        </li>
+        <li class="mt-8 text-xl">
+            <div
+                (click)="choiceTheme = !choiceTheme"
+                class="flex items-center gap-x-2">
+                <i class="bi bi-sun-fill"></i>
+                <span>Thème</span> 
+            </div>
+            <div 
+                *ngIf="choiceTheme"
+                class="flex flex-col text-lg absolute mt-2">
+                <button
+                        (click)="themeService.setLightTheme()"
+                        [class.bg-accent]="themeService.themeDisplay() === appTheme.Light"
+                        [class.text-background]="themeService.themeDisplay() === appTheme.Light"
+                        
+                        class="flex pl-5 gap-x-2 items-center px-6 rounded-lg">
+                        <i class="bi bi-sun text-xl"></i>
+                        Claire
+                    </button>
+                    <button
+                        (click)="themeService.setDarkTheme()"
+                        [class.bg-accent]="themeService.themeDisplay() === appTheme.Dark"
+                        [class.text-background]="themeService.themeDisplay() === appTheme.Dark"
+                        class="flex pl-5 gap-x-2 items-center px-6 rounded-lg">
+                        <i class="bi bi-moon"></i>
+                        Sombre
+                    </button>
+                    <button
+                        (click)="themeService.setSystemTheme()"
+                        [class.bg-accent]="themeService.themeDisplay() === appTheme.System"
+                        [class.text-background]="themeService.themeDisplay() === appTheme.System"
+                        class="flex pl-5 gap-x-2 items-center px-6 rounded-lg">
+                        <i class="bi bi-pc-display"></i>
+                        System
+                    </button>
+            </div>
         </li>
     </ul>
 

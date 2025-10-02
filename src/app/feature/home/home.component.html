@@ -21,13 +21,13 @@
             {{home.description}}
         </p>
         <div 
-            class="h-10 w-30 lg:w-10 hover:w-30 flex items-center justify-between relative border-2 border-text hover:border-accen rounded-4xl mt-8 cursor-pointer transition-all duration-300 group" @faceInDelayXl
+            class="h-10 w-30 lg:w-10 hover:w-30 flex items-center justify-between relative border-2 border-text dark:border-background hover:border-accen rounded-4xl mt-8 cursor-pointer transition-all duration-300 group" @faceInDelayXl
             routerLink="/intro">
             <span
-                class="ml-2 text-lg text-text capitalize lg:opacity-0 lg:group-hover:opacity-100 absolute group-hover:relative transition-all duration-500">intro
+                class="ml-2 text-lg text-text dark:text-background capitalize lg:opacity-0 lg:group-hover:opacity-100 absolute group-hover:relative transition-all duration-500">intro
             </span>
             <span
-                class="h-[34px] lg:h-9 lg:group-hover:h-[34px] w-16 lg:w-9 lg:group-hover:w-16 flex items-center justify-center absolute right-[1px] lg:right-0 lg:group-hover:right-[1px] rounded-full text-white bg-text transition-all duration-300">
+                class="h-[34px] lg:h-9 lg:group-hover:h-[34px] w-16 lg:w-9 lg:group-hover:w-16 flex items-center justify-center absolute right-[1px] lg:right-0 lg:group-hover:right-[1px] rounded-full text-white dark:text-text bg-text dark:bg-background transition-all duration-300">
                 <i class="bi bi-arrow-up-right"></i>
             </span>
         </div>
@@ -39,7 +39,7 @@
         <img
             src="assets/icons/element/arrow-icon.svg"
             alt=""
-            class="h-8 w-8 animate-bounce"
+            class="h-8 w-8 animate-bounce dark:stroke-background fill-background"
             (click)="scrollDown()"
         >
         <span

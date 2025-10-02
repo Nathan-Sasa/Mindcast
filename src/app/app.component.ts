@@ -1,7 +1,10 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, inject, Renderer2 } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { MenuToggleComponent } from './shared/components/menu-toggle/menu-toggle.component';
 import { CommonModule } from '@angular/common';
+import { AppTheme, ThemeService } from './core/services/theme.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -10,8 +13,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Mindcast';
-  logo = "assets/icons/site/mindcast-logo.svg"
+
+    // theme (Light || Dark || System)
+    themeService = inject(ThemeService);
+    appTheme = AppTheme
+
+    // switch theme
+    choiceTheme = false 
+
+
+    title = 'Mindcast';
+    logo = "assets/icons/site/mindcast-logo.svg"
 
 
     isMenuOpen = false;
